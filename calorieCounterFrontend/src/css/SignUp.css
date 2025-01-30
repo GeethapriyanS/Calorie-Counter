@@ -1,0 +1,128 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    margin:0;
+    padding: 0;
+    background-image: url('../assets/back2.jpeg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    font-family:monospace,'Courier New', Courier;
+    align-items: center;
+    height: 100vh;
+    background-color: #dddbdb;
+} 
+
+.center {
+    background: #ededed;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 30%;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.data > input {
+    padding: 10px;
+    border: 1px solid #00000000;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+}
+
+.forgot-pass {
+    text-align: right;
+}
+
+.forgot-pass a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.forgot-pass a:hover {
+    color: #0056b3;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.log-but {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.log-but:hover {
+    background-color: #0056b3;
+}
+
+.signup-link {
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+}
+
+.signup-link a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.signup-link a:hover {
+    color: #0056b3;
+}
+
+.link2{
+    text-decoration: none;
+    margin-top:3% ;
+    color: rgb(146, 60, 232);
+}
