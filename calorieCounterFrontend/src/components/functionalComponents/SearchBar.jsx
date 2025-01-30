@@ -2,39 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../../css/Searchbar.css";
 
-const SearchBar = ({ setMeals }) => {
+const SearchBar = ({ setMeals}) => {
     const [query, setQuery] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
     const handleSearch = async () => {
-        if (!query) return;  
+        if (!query) return;
         setLoading(true);
-        setError(""); 
-    
+        setError("");
         try {
-            const response = await axios.get(
-                `https://api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`,
-                { headers: { "X-Api-Key": "fgNDimI88JGH2COMtmuNoQ==LdcHcWicjxpSiMAV" } }
-            );
-    
-            const nutrition = response.data.items[0] || {};
-    
-            const newMeal = {
-                name: query,
-                calories: nutrition.calories || 0,  
-                protein: nutrition.protein_g || 0,
-                carbs: nutrition.carbohydrates_total_g || 0,
-                fat: nutrition.fat_total_g || 0
-            };
-    
-            setMeals(prevMeals => [newMeal, ...prevMeals]);
+            const email = localStorage.getItem("userEmail");
+            if (!email) {
+                setError("User email is missing. Please log in again.");
+                return;
+            }
+            const response = await axios.post("http://localhost:3001/add-meal", { query, email });
+            setMeals(prevMeals => [...prevMeals, response.data.meal]); 
         } catch (error) {
+            console.error(error);
             setError("Failed to fetch nutrition info. Please try again later.");
         } finally {
             setLoading(false);
         }
-    };
+};
 
     return (
         <div className="searchBar">

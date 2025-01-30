@@ -18,7 +18,7 @@ const SignUp = ()=>{
     event.preventDefault();
     console.log("Event Triggered");
     try {
-      const req = await axios.post("http://localhost:3001/api/auth/signup", {
+      const req = await axios.post("http://localhost:3001/signup", {
         firstName: firstName,
         lastName: lastName,
         username: username,

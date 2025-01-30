@@ -14,7 +14,7 @@ const Login = ()=>{
         event.preventDefault();
         console.log("Event Triggered");
         try {
-          const req = await axios.post("http://localhost:3001/api/auth/login", {
+          const req = await axios.post("http://localhost:3001/login", {
             email: email,
             password: password,
           });
@@ -22,6 +22,7 @@ const Login = ()=>{
           alert(req.data.message);
           if (req.data.Loginstatus) {
             navigate("/home");
+            localStorage.setItem("userEmail", req.data.email);
           }
         } catch (err) {
           console.log(err);

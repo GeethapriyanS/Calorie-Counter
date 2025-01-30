@@ -5,6 +5,7 @@ import Login from './components/functionalComponents/Login';
 import MealsContainer from './components/functionalComponents/Meal';
 import Goals from './components/functionalComponents/Goals';
 import Home from './components/functionalComponents/Home'
+import FoodSearch from './components/functionalComponents/FoodSearch';
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/meals" element={<MealsContainer />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/goals" element={<Goals />}></Route>
+        <Route path="/food" element={<FoodSearch />}></Route>
         <Route path="/nutrition-info" element={<NutritionInfo />}></Route>
         </Routes>
       </BrowserRouter>

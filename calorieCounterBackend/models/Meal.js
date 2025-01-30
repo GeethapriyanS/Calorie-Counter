@@ -7,7 +7,8 @@ const MealSchema = new mongoose.Schema({
     carbs: Number,
     fats: Number,
     date: { type: Date, default: Date.now },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "Signup" },
+    date: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model("Meal", MealSchema);
