@@ -55,9 +55,9 @@ app.post("/signup", async (req, res) => {
         password:hashedPassword,
     });
     user.save();
-    res.status(201).json({response:"Signup Successful",signupStatus:true});
+    res.status(201).json({response:"Signup Successful",signupStatus:true,email:user.email});
     } catch (err) {
-        res.status(500).json({ response: "Error creating user",signupStatus:false });
+        res.status(500).json({ response: "Error creating user",signupStatus:false,email:null });
     }
 });
 
@@ -182,7 +182,7 @@ app.post("/set-goal", async (req, res) => {
 
         if (!email || !goal) return res.status(400).json({ message: "Missing parameters" });
 
-        await Signup.updateOne({ email }, { $set: { calorieGoal: goal } });
+        await Signup.findOneAndUpdate({ email }, { $set: { calorieGoal: goal } });
 
         res.status(200).json({ message: "Goal updated successfully", goal });
     } catch (error) {
@@ -206,6 +206,26 @@ app.get("/get-goal", async (req, res) => {
     }
 });
 
+app.get("/get-total-calories", async (req, res) => {
+    try {
+        const { email } = req.query;
+        if (!email) return res.status(400).json({ message: "Email is required" });
+
+        const user = await Signup.findOne({ email });
+        if (!user) return res.status(404).json({ message: "User not found" });
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const meals = await Meal.find({ user: user._id, date: { $gte: today } });
+        const totalCalories1 = meals.reduce((sum, meal) => sum + meal.calories, 0);
+
+        res.status(200).json({totalCalories1});
+    } catch (error) {
+        console.error("Error fetching total calories:", error);
+        res.status(500).json({ message: "Error retrieving total calories" });
+    }
+});
 
 app.listen(3001,()=>{
     console.log("Server Started");

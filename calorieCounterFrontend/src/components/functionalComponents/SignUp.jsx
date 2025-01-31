@@ -28,6 +28,7 @@ const SignUp = ()=>{
       console.log(req);
       if (req.data.signupStatus) {
         navigator("/home");
+        localStorage.setItem("userEmail", req.data.email);
       }
     } catch (err) {
       console.log(err);
@@ -42,24 +43,24 @@ const SignUp = ()=>{
             </div>
             <form onSubmit={handleSignup}>
             <div className="data">
-                    <label htmlFor="name">firstName</label>
-                    <input type="text" name="firstName" placeholder="enter your firstname"  onChange={(e) => setFirstname(e.target.value)} required/>
+                    <label htmlFor="name">FirstName</label>
+                    <input type="text" name="firstName" placeholder="Enter your firstname"  onChange={(e) => setFirstname(e.target.value)} required/>
                 </div>
                 <div className="data">
-                    <label htmlFor="name">lastName</label>
-                    <input type="text" name="lastName" placeholder="enter your lastname"  onChange={(e) => setLastname(e.target.value)} required/>
+                    <label htmlFor="name">LastName</label>
+                    <input type="text" name="lastName" placeholder="Enter your lastname"  onChange={(e) => setLastname(e.target.value)} required/>
                 </div>
                 <div className="data">
                     <label htmlFor="username">UserName</label>
-                    <input type="text" name="username" placeholder="enter your username"  onChange={(e) => setUsername(e.target.value)} required/>
+                    <input type="text" name="username" placeholder="Enter your username"  onChange={(e) => setUsername(e.target.value)} required/>
                 </div>
                 <div className="data">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" placeholder="enter your email" onChange={(e) => setEmail(e.target.value)} required/>
+                    <input type="email" name="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} required/>
                 </div>
                 <div className="data">
                     <label htmlFor="password">Password</label>
-                    <input type="text" name="password" placeholder="enter your password" onChange={(e) => setPassword(e.target.value)} required/>
+                    <input type="password" name="password" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
                 <button type='submit' className="log-but">sumbit</button>
             </form>

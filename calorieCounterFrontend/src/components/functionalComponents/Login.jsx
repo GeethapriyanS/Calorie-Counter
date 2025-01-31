@@ -37,11 +37,11 @@ const Login = ()=>{
             <form onSubmit={handleLogin}>
                 <div className="data">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" placeholder="enter your email" onChange={(e) => setEmail(e.target.value)} required/>
+                    <input type="email" name="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} required/>
                 </div>
                 <div className="data">
                     <label htmlFor="password">Password</label>
-                    <input type="text" name="password" placeholder="enter your password"  onChange={(e) => setPassword(e.target.value)} required/>
+                    <input type="text" name="password" placeholder="Enter your password"  onChange={(e) => setPassword(e.target.value)} required/>
                 </div>
                 <button className="log-but" type='submit'>Login</button>
             </form>

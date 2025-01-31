@@ -3,13 +3,13 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: monospace;
     align-items: center;
   }
   
   .home-content {
     text-align: center;
     padding: 2rem;
+    font-family: cursive;
     max-width: 700px;
   }
   
@@ -42,17 +42,19 @@
   }
   
   .home-btn {
-    background-color: #27ae60;
-    color: white;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
+    margin: 0.25em;
+    border: 1px solid #e36bae;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    padding: 0.25em 0.75em;
+    background-color: #e36bae;
+    font-family: inherit;
+    &:hover {
     cursor: pointer;
-    transition: background 0.3s ease;
-  }
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
+}
   
-  .home-btn:hover {
-    background-color: #219150;
-  }
   

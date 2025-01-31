@@ -3,9 +3,10 @@ import axios from "axios";
 import "../../css/Goals.css";
 import Navbar from "./Navbar";
 
-const Goals = ({ totalCalories }) => {
+const Goals = () => {
     const [goal, setGoal] = useState("");
     const [savedGoal, setSavedGoal] = useState(null);
+    const [totalCalories, setTotalCalories] = useState(0); 
 
     useEffect(() => {
         const fetchGoal = async () => {
@@ -21,6 +22,20 @@ const Goals = ({ totalCalories }) => {
         fetchGoal();
     }, []);
 
+    useEffect(() => {
+        const fetchTotalCalories = async () => {
+            try {
+                const email = localStorage.getItem("userEmail");
+                const response = await axios.get(`http://localhost:3001/get-total-calories?email=${email}`);
+                setTotalCalories(response.data.totalCalories1);
+            } catch (error) {
+                console.error("Error fetching total calories:", error);
+            }
+        };
+
+        fetchTotalCalories();
+    }, []);
+
     const updateGoal = async () => {
         try {
             const email = localStorage.getItem("userEmail");
@@ -34,28 +49,28 @@ const Goals = ({ totalCalories }) => {
 
     return (
         <div>
-        <Navbar />
-        <div className="goalContainer">
-            <h3>Set Your Calorie Goal</h3>
-            <input
-                type="number"
-                value={goal}
-                onChange={(e) => setGoal(e.target.value)}
-                placeholder="Enter calorie target"
-                className="goalInput"
-            />
-            <button onClick={updateGoal} className="goalButton">Set Goal</button>
+            <Navbar />
+            <div className="goalContainer">
+                <h3>Set Your Calorie Goal</h3>
+                <input
+                    type="number"
+                    value={goal}
+                    onChange={(e) => setGoal(e.target.value)}
+                    placeholder="Enter calorie target"
+                    className="goalInput"
+                />
+                <button onClick={updateGoal} className="goalButton">Set Goal</button>
 
-            {savedGoal && (
-                <div className="goalStatus">
-                    <p>Goal: {savedGoal} kcal</p>
-                    <p>Consumed: {totalCalories} kcal</p>
-                    <p style={{ color: totalCalories > savedGoal ? "red" : "green" }}>
-                        {totalCalories > savedGoal ? "⚠️ Exceeded Goal!" : "✅ On Track"}
-                    </p>
-                </div>
-            )}
-        </div>
+                {savedGoal && (
+                    <div className="goalStatus">
+                        <p>Goal: {savedGoal} kcal</p>
+                        <p>Consumed: {totalCalories} kcal</p>
+                        <p style={{ color: totalCalories > savedGoal ? "red" : "green" }}>
+                            {totalCalories > savedGoal ? "⚠️ Exceeded Goal!" : "✅ On Track"}
+                        </p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

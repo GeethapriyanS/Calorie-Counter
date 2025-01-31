@@ -26,6 +26,20 @@ const MealsContainer = () => {
             .catch(err => console.error("Error fetching data:", err));
     }, []);
 
+    useEffect(() => {
+        const fetchTotalCalories = async () => {
+            try {
+                const email = localStorage.getItem("userEmail");
+                const response = await axios.get(`http://localhost:3001/get-total-calories?email=${email}`);
+                setTotalCalories(response.data.totalCalories1); 
+            } catch (error) {
+                console.error("Error fetching total calories:", error);
+            }
+        };
+
+        fetchTotalCalories();
+    }, []);
+
     const deleteMeal = (mealId) => {
         axios.delete(`http://localhost:3001/delete-meal/${mealId}`)
             .then(() => {

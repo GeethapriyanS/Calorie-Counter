@@ -1,5 +1,7 @@
 .chartContainer {
     width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     margin-top: 20px;
     background: white;
     padding: 15px;

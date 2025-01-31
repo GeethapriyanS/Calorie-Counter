@@ -5,6 +5,7 @@ const signupSchema = mdb.Schema({
     username:String,
     email:String,
     password:String,
+    calorieGoal: { type: Number, default: 0 },
 });
 const Signup = mdb.model("Signup",signupSchema);
 module.exports = Signup;

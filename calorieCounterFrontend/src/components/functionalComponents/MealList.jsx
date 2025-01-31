@@ -48,8 +48,8 @@ const MealList = ({ meals, deleteMeal, editMeal }) => {
                             <>
                                 <span className="mealInfo">{meal.name} - {meal.calories} kcal</span>
                                 <div className="mealButtons">
-                                    <button className="deleteButton" onClick={() => deleteMeal(meal._id)}>🗑 Delete</button>
-                                    <button className="editButton" onClick={() => handleEditClick(meal)}>✏ Edit</button>
+                                    <button className="deleteButton" onClick={() => deleteMeal(meal._id)}>Delete</button>
+                                    <button className="editButton" onClick={() => handleEditClick(meal)}>Edit</button>
                                 </div>
                             </>
                         )}

@@ -67,5 +67,17 @@
 }
 
 .searchButton{
-    margin-top: 20px;
+    margin-top: 18px;
+    border: 1px solid #e36bae;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    padding: 0.25em 0.75em;
+    background-color: #e36bae;
+    font-family: inherit;
+    &:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
 }

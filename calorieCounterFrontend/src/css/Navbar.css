@@ -1,22 +1,24 @@
 .navbar {
     display: flex;
     justify-content: space-around;
-    background-color: #333;
+    background-color: #e36bae;
     padding: 10px 0;
 }
 
 .nav-link {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-family: monospace;
     padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: #555;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
 }
 
 .nav-link:active {

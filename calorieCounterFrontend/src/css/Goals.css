@@ -1,6 +1,7 @@
 body{
     background-image: url('../assets/back7.jpg');
     background-size: cover;
+    font-family:  cursive;
 }
 
 .goalContainer {
@@ -26,6 +27,7 @@ body{
     border: 2px solid #ddd;
     border-radius: 8px;
     outline: none;
+    font-family: inherit;
     margin-bottom: 15px;
     transition: border 0.3s ease;
 }
@@ -35,15 +37,20 @@ body{
 }
 
 .goalButton {
+    margin: 0.25em;
+    border: 1px solid #e36bae;
+    border-radius: 10px;
+    height: 50px;
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    background-color: #4CAF50;
     color: white;
-    border: none;
-    border-radius: 8px;
+    font-size: 18px;
+    padding: 0.25em 0.75em;
+    background-color: #e36bae;
+    font-family: inherit;
+    &:hover {
     cursor: pointer;
-    transition: background 0.3s ease;
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
 }
 
 .goalButton:hover {

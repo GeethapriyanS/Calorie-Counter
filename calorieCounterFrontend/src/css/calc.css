@@ -1,0 +1,63 @@
+.calorieCalculator {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calorieCalculator h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.inputGroup {
+    margin: 10px 0;
+}
+
+.inputGroup label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.inputGroup input {
+    width: 92%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    text-align: center;
+}
+
+.calculateButton {
+    margin: 0.25em;
+    border: 1px solid #e36bae;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    padding: 0.25em 0.75em;
+    background-color: #e36bae;
+    font-family: inherit;
+    &:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
+}
+
+.calculateButton:hover {
+    background-color: #0056b3;
+}
+
+.calorieResult {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+}
