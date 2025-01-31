@@ -12,7 +12,7 @@ const Goals = () => {
         const fetchGoal = async () => {
             try {
                 const email = localStorage.getItem("userEmail");
-                const response = await axios.get(`http://localhost:3001/get-goal?email=${email}`);
+                const response = await axios.get(`https://calorie-counter-83w9.onrender.com/get-goal?email=${email}`);
                 setSavedGoal(response.data.goal);
             } catch (error) {
                 console.error("Error fetching goal:", error);
@@ -26,7 +26,7 @@ const Goals = () => {
         const fetchTotalCalories = async () => {
             try {
                 const email = localStorage.getItem("userEmail");
-                const response = await axios.get(`http://localhost:3001/get-total-calories?email=${email}`);
+                const response = await axios.get(`https://calorie-counter-83w9.onrender.com/get-total-calories?email=${email}`);
                 setTotalCalories(response.data.totalCalories1);
             } catch (error) {
                 console.error("Error fetching total calories:", error);
@@ -39,7 +39,7 @@ const Goals = () => {
     const updateGoal = async () => {
         try {
             const email = localStorage.getItem("userEmail");
-            await axios.post("http://localhost:3001/set-goal", { email, goal });
+            await axios.post("https://calorie-counter-83w9.onrender.com/set-goal", { email, goal });
             setSavedGoal(goal);
             alert("Calorie goal updated!");
         } catch (error) {

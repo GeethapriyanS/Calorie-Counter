@@ -17,7 +17,7 @@ const SearchBar = ({ setMeals}) => {
                 setError("User email is missing. Please log in again.");
                 return;
             }
-            const response = await axios.post("http://localhost:3001/add-meal", { query, email });
+            const response = await axios.post("https://calorie-counter-83w9.onrender.com/add-meal", { query, email });
             setMeals(prevMeals => [...prevMeals, response.data.meal]); 
         } catch (error) {
             console.error(error);

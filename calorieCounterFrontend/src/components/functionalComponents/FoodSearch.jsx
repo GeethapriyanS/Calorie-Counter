@@ -22,7 +22,7 @@ const FoodSearch = ({ addMeal }) => {
         setError("");
 
         try {
-            const response = await axios.get(`http://localhost:3001/search-food?query=${query}`);
+            const response = await axios.get(`https://calorie-counter-83w9.onrender.com/search-food?query=${query}`);
             setSuggestions(response.data.hints.map(hint => ({
                 name: hint.food.label,
                 calories: hint.food.nutrients.ENERC_KCAL

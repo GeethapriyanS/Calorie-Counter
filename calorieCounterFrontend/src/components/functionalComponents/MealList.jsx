@@ -41,8 +41,8 @@ const MealList = ({ meals, deleteMeal, editMeal }) => {
                                     onChange={handleEditChange}
                                     className="editInput"
                                 />
-                                <button className="saveButton" onClick={() => handleEditSubmit(meal._id)}>💾 Save</button>
-                                <button className="cancelButton" onClick={() => setEditingMeal(null)}>❌ Cancel</button>
+                                <button className="saveButton" onClick={() => handleEditSubmit(meal._id)}>Save</button>
+                                <button className="cancelButton" onClick={() => setEditingMeal(null)}>Cancel</button>
                             </div>
                         ) : (
                             <>

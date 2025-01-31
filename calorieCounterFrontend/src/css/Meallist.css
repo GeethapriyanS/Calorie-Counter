@@ -43,21 +43,35 @@
 }
 
 .deleteButton {
-    background-color: #dc3545;
+    margin: 0.25em;
+    border: 1px solid #e36bae;
+    border-radius: 10px;
+    height: 50px;
     color: white;
+    font-size: 18px;
+    padding: 0.25em 0.75em;
+    background-color: #d55d5d;
+    font-family: inherit;
+    &:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
 }
 
 .editButton {
-    background-color: #007bff;
+    margin: 0.25em;
+    border: 1px solid #cde36b;
+    border-radius: 10px;
+    height: 50px;
     color: white;
-}
-
-.deleteButton:hover {
-    background-color: #c82333;
-}
-
-.editButton:hover {
-    background-color: #0056b3;
+    font-size: 18px;
+    padding: 0.25em 0.75em;
+    background-color: #c2d737;
+    font-family: inherit;
+    &:hover {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #e36bae, #fb743e);
+    }
 }
 
 .editForm {

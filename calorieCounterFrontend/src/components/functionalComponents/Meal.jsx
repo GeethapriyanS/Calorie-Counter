@@ -18,7 +18,7 @@ const MealsContainer = () => {
             return;
         }
 
-        axios.get(`http://localhost:3001/get-meal?email=${email}`)
+        axios.get(`https://calorie-counter-83w9.onrender.com/get-meal?email=${email}`)
             .then(res => {
                 setMeals(res.data.meals);
                 setTotalCalories(res.data.totalCalories);
@@ -30,7 +30,7 @@ const MealsContainer = () => {
         const fetchTotalCalories = async () => {
             try {
                 const email = localStorage.getItem("userEmail");
-                const response = await axios.get(`http://localhost:3001/get-total-calories?email=${email}`);
+                const response = await axios.get(`https://calorie-counter-83w9.onrender.com/get-total-calories?email=${email}`);
                 setTotalCalories(response.data.totalCalories1); 
             } catch (error) {
                 console.error("Error fetching total calories:", error);
@@ -41,7 +41,7 @@ const MealsContainer = () => {
     }, []);
 
     const deleteMeal = (mealId) => {
-        axios.delete(`http://localhost:3001/delete-meal/${mealId}`)
+        axios.delete(`https://calorie-counter-83w9.onrender.com/delete-meal/${mealId}`)
             .then(() => {
                 setMeals(meals.filter(meal => meal._id !== mealId));
             })
@@ -49,7 +49,7 @@ const MealsContainer = () => {
     };
 
     const editMeal = (mealId, updatedMeal) => {
-        axios.put(`http://localhost:3001/edit-meal/${mealId}`, updatedMeal)
+        axios.put(`https://calorie-counter-83w9.onrender.com/edit-meal/${mealId}`, updatedMeal)
             .then(res => {
                 setMeals(meals.map(meal => meal._id === mealId ? res.data.meal : meal));
             })

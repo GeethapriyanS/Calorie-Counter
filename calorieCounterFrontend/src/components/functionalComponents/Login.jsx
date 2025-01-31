@@ -14,7 +14,7 @@ const Login = ()=>{
         event.preventDefault();
         console.log("Event Triggered");
         try {
-          const req = await axios.post("http://localhost:3001/login", {
+          const req = await axios.post("https://calorie-counter-83w9.onrender.com/login", {
             email: email,
             password: password,
           });
